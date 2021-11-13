@@ -14,4 +14,4 @@ services:
     volumes:
       - .:/workarea
     depends_on: 
-      - {{cookiecutter.package_name}}-db
+      - {{cookiecutter.package_name}}-service
