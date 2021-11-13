@@ -1,0 +1,17 @@
+version: '3'
+services:
+  {{cookiecutter.package_name}}-service:
+    build:
+      context: .
+    command: uvicorn {{cookiecutter.package_name}}.main:app --reload
+    restart: unless-stopped
+    volumes:
+      - .:/workarea
+      
+  test:
+    build: .
+    command: pytest -v
+    volumes:
+      - .:/workarea
+    depends_on: 
+      - {{cookiecutter.package_name}}-db
