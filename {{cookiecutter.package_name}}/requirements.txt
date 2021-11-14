@@ -1,3 +1,4 @@
 fastapi
 uvicorn[standard]
 requests
+idna==2.8
